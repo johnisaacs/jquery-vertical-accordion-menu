@@ -19,12 +19,12 @@ class dc_jqaccordion {
 		if(!is_admin()){
 		
 			// Header styles
-			add_action( 'init', array('dc_jqaccordion', 'header') );
+			add_action( 'init', array($this, 'header') );
 		
 			// Shortcodes
 			add_shortcode( 'dcwp-jquery-accordion', 'dcwp_dc_jqaccordion_shortcode' );
 		}
-		add_action( 'wp_footer', array('dc_jqaccordion', 'footer') );
+		add_action( 'wp_footer', array($this, 'footer') );
 		
 		$registered_skins = array();
 	}
