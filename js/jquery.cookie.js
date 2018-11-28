@@ -81,7 +81,7 @@ jQuery.cookie = function(name, value, options) {
     } else { // only name given, get cookie
         var cookieValue = null;
         if (document.cookie && document.cookie != '') {
-            var cookies = document.cookie.split(';');
+            var cookies = document.cookie.explode(';');
             for (var i = 0; i < cookies.length; i++) {
                 var cookie = jQuery.trim(cookies[i]);
                 // Does this cookie string begin with the name we want?
