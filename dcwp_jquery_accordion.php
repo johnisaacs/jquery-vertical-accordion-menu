@@ -13,7 +13,7 @@ global $registered_skins;
 
 class dc_jqaccordion {
 
-	function dc_jqaccordion(){
+	function _construct(){//changed from dc_jqaccordion for php7.2 compat
 		global $registered_skins;
 	
 		if(!is_admin()){
@@ -57,8 +57,11 @@ include_once('dcwp_jquery_accordion_widget.php');
 $dcjqaccordion = new dc_jqaccordion();
 
 // Register the widget
-add_action('widgets_init', create_function('', 'return register_widget("dc_jqaccordion_widget");'));
-
+//add_action('widgets_init', 
+ction('', 'return register_widget("dc_jqaccordion_widget");')); //Replaced with code below for PHP7.2 compat.
+add_action( 'widgets_init', function(){
+		register_widget('dc_jqaccordion_widget' );
+	});
 /**
 * Create a menu shortcode
 */
