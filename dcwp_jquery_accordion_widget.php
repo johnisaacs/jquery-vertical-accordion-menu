@@ -2,7 +2,7 @@
 
 class dc_jqaccordion_widget extends WP_Widget {
     /** constructor */
-    function dc_jqaccordion_widget() {
+    function __construct() {
 	
 		$name =			'jQuery Accordion Menu';
 		$desc = 		'Vertical Accordion From Custom Menus';
@@ -15,9 +15,9 @@ class dc_jqaccordion_widget extends WP_Widget {
 			'classname' => $css_class,
 			'description' => __( $desc, 'dcjq-accordion' ),
 		);
-		parent::WP_Widget( 'nav_menu', __('Custom Menu'), $widget_ops );
+		parent::__construct( 'nav_menu', __('Custom Menu'), $widget_ops );
 
-		$this->WP_Widget($id_base, __($name, 'dcjqaccordion'), $widget_ops);
+		parent::__construct($id_base, __($name, 'dcjqaccordion'), $widget_ops);
 		$this->alt_option_name = $alt_option;
 		
 		add_action( 'wp_head', array(&$this, 'styles'), 10, 1 );	
