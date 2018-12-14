@@ -57,8 +57,9 @@ include_once('dcwp_jquery_accordion_widget.php');
 $dcjqaccordion = new dc_jqaccordion();
 
 // Register the widget
-//add_action('widgets_init', 
-ction('', 'return register_widget("dc_jqaccordion_widget");')); //Replaced with code below for PHP7.2 compat.
+/*
+*add_action('widgets_init', action('', 'return register_widget("dc_jqaccordion_widget");')); 
+//Replaced with code below for PHP7.2 compat.*/
 add_action( 'widgets_init', function(){
 		register_widget('dc_jqaccordion_widget' );
 	});
