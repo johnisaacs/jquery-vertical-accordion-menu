@@ -13,7 +13,7 @@ global $registered_skins;
 
 class dc_jqaccordion {
 
-	function _construct(){//changed from dc_jqaccordion for php7.2 compat
+	function __construct(){//changed from dc_jqaccordion for php7.2 compat
 		global $registered_skins;
 	
 		if(!is_admin()){
